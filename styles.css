@@ -16,7 +16,15 @@
 }
 
 .template {
-  display: inline;
-  margin: -100px;
-margin-left:;
+    display: inline;
+}
+
+.stacked-template1 {
+    height:300px;
+    margin-left:-150px;
+}
+
+.stacked-template2{
+    height: 350px;
+    margin-left:-150px;
 }
