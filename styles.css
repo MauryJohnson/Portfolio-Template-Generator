@@ -12,10 +12,11 @@
 }
 
 .templates {
-  text-align: center;
+  text-align: center;	
 }
 
 .template {
   display: inline;
   margin: -100px;
+margin-left:;
 }
