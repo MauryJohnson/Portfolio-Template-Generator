@@ -1,1 +1,21 @@
+.nav-buttons {
+  background-color: red;
+  text-align: center;
+}
 
+.nav-buttons button {
+  color: blue;
+  background: tomato;
+  padding: 10px;
+  margin: 10px;
+  min-width: 250px;
+}
+
+.templates {
+  text-align: center;
+}
+
+.template {
+  display: inline;
+  margin: -100px;
+}
