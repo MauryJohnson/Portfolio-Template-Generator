@@ -32,6 +32,12 @@ button:hover{
     display: inline;
 }
 
+.stacked-template0{
+    height:250px;
+    width: 250px;
+
+}
+
 .stacked-template1 {
     height:300px;
     margin-left:-150px;

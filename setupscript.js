@@ -1,5 +1,3 @@
-
-
 document.body.innerHTML = `<div class="header">
        <img src="" />
      </div>
@@ -11,7 +9,6 @@ document.body.innerHTML = `<div class="header">
        </div>
      </div>
 ` + document.body.innerHTML;
-
 
 console.log("setup script");
 
@@ -59,3 +56,89 @@ document.body.innerHTML+=`<div class="footer">
 `;
 
 Script();
+
+
+//max height 350
+
+//var Templates = [];
+
+var Templates3 = document.getElementsByClassName("template")[0].children;
+
+var Templates2 = document.getElementsByClassName("template")[1].children;
+
+var Templatesl = [Templates2,Templates3]
+
+/*
+for(var t in Templates2){
+    Templates.push(Templates2[t]);
+}
+for(var t in Templates3){
+     Templates.push(Templates2[t]);
+ }
+*/
+
+var MaxHeight = 0;
+
+for(var t in Templatesl){
+
+    var Templates = Templatesl[t];
+
+    for(var i = 0;i<Templates.length;i+=1){
+
+    var height = Templates[i].getBoundingClientRect().height;
+    if(height > MaxHeight)
+        MaxHeight = height;
+
+    var width = Templates[i].getBoundingClientRect().width;
+
+    console.log("My W/H is:"+width+","+height);
+
+    Templates[i].setAttribute("previousHeight",height+"px");
+    Templates[i].setAttribute("previousWidth",width+"px");
+    Templates[i].setAttribute("index",i+"");
+
+    Templates[i].addEventListener("mouseover",function(){
+        if(this.style.display=="none")
+            return;
+
+       this.style.height = MaxHeight+"px";
+
+       var index = parseInt(this.getAttribute("index"));
+
+       this.style.zIndex = 1;
+
+        var Templates = this.parentNode.children;
+
+        //alert(index);
+
+        for(var i=0;i<Templates.length;i+=1){
+            if(i!=index){
+                //Templates[i].style.display="none";
+                Templates[i].style.opacity="0";
+            }
+        }
+
+        //this.parentNode.appendChild(this);
+
+    });
+
+    Templates[i].addEventListener("mouseout",function(){
+
+        this.style.height=this.getAttribute("previousHeight");
+
+        this.style.zIndex = 1;
+
+        var index = parseInt(this.getAttribute("index"));
+
+        var Templates = this.parentNode.children;
+
+         for(var i=0;i<Templates.length;i+=1){
+             if(i!=index){
+                 Templates[i].style.opacity="1";
+             }
+         }
+
+    });
+
+}
+}
