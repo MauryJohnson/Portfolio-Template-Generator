@@ -98,7 +98,7 @@ for(var t in Templatesl){
     Templates[i].setAttribute("index",i+"");
 
     Templates[i].addEventListener("mouseover",function(){
-        if(this.style.display=="none")
+        if(this.style.opacity=="0")
             return;
 
        this.style.height = MaxHeight+"px";
