@@ -30,6 +30,7 @@ button:hover{
 
 .template {
     display: inline;
+    cursor:pointer;
 }
 
 .stacked-template0{
