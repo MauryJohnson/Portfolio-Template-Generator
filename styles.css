@@ -1,14 +1,27 @@
 .nav-buttons {
-  background-color: red;
+  background-color: rgb(60,60,100);
   text-align: center;
 }
 
 .nav-buttons button {
   color: blue;
-  background: tomato;
+  background: charcoal-gray;
   padding: 10px;
   margin: 10px;
   min-width: 250px;
+}
+
+button{
+    border-radius:20px;
+    border:5px solid gray;
+}
+
+button:hover{
+    background:gray;
+}
+
+.nav-button:hover{
+    color:black;
 }
 
 .templates {
@@ -39,3 +52,44 @@
     margin-left:-100px;
 
 }
+
+.instagram{
+    width:100px;
+    height:100px;
+    cursor:pointer;
+}
+
+.facebook{
+    width:100px;
+     height:100px;
+     cursor:pointer;
+
+}
+
+.twitter{
+width:100px;
+     height:100px;
+     cursor:pointer;
+
+}
+
+.gmail {
+width:100px;
+     height:100px;
+     cursor:pointer;
+
+}
+
+.footer{
+
+}
+
+footer{
+    text-align:center;
+    background-color:rgb(60,60,100);
+}
+
+p {
+    font:Arial;
+}
+
