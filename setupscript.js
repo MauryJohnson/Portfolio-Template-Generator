@@ -78,6 +78,7 @@ for(var t in Templates3){
 */
 
 var MaxHeight = 0;
+var MaxWidth = 0;
 
 for(var t in Templatesl){
 
@@ -90,6 +91,8 @@ for(var t in Templatesl){
         MaxHeight = height;
 
     var width = Templates[i].getBoundingClientRect().width;
+    if(width > MaxWidth)
+        MaxWidth = width;
 
     console.log("My W/H is:"+width+","+height);
 
@@ -102,6 +105,8 @@ for(var t in Templatesl){
             return;
 
        this.style.height = MaxHeight+"px";
+
+        this.style.width = MaxWidth+"px";
 
        var index = parseInt(this.getAttribute("index"));
 
@@ -125,6 +130,8 @@ for(var t in Templatesl){
     Templates[i].addEventListener("mouseout",function(){
 
         this.style.height=this.getAttribute("previousHeight");
+
+        this.style.width=this.getAttribute("previousWidth");
 
         this.style.zIndex = 1;
 
