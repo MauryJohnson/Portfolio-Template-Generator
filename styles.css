@@ -40,12 +40,13 @@ button:hover{
 
 .stacked-template1 {
     height:300px;
-    width:250px;
+    width:300px; 
     margin-left:-150px;
 }
 
 .stacked-template2{
     height: 350px;
+    width:350px;
     margin-left:-150px;
 }
 
