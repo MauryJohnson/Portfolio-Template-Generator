@@ -1,5 +1,5 @@
 .nav-buttons {
-  background-color: rgb(60,60,100);
+  background-color: rgb(60, 60, 100);
   text-align: center;
 }
 
@@ -11,94 +11,88 @@
   min-width: 250px;
 }
 
-button{
-    border-radius:20px;
-    border:5px solid gray;
+button {
+  border-radius: 20px;
+  border: 5px solid gray;
+  cursor: pointer;
 }
 
-button:hover{
-    background:gray;
+button:hover {
+  background: gray;
 }
 
-.nav-button:hover{
-    color:black;
+.nav-button:hover {
+  color: black;
 }
 
 .templates {
-  text-align: center;	
+  text-align: center;
 }
 
 .template {
-    display: inline;
-    cursor:pointer;
+  display: inline;
+  cursor: pointer;
 }
 
-.stacked-template0{
-    height:250px;
-    width: 250px;
-
+.stacked-template0 {
+  height: 250px;
+  width: 250px;
 }
 
 .stacked-template1 {
-    height:300px;
-    width:300px; 
-    margin-left:-150px;
+  height: 300px;
+  width: 300px;
+  margin-left: -150px;
 }
 
-.stacked-template2{
-    height: 350px;
-    width:350px;
-    margin-left:-150px;
+.stacked-template2 {
+  height: 350px;
+  width: 350px;
+  margin-left: -150px;
 }
 
-.stacked-template3{
-    height:90px;
-    margin-left:-100px;
+.stacked-template3 {
+  height: 90px;
+  margin-left: -100px;
 }
 
-.stacked-template4{
-    height:100px;
-    margin-left:-100px;
-
+.stacked-template4 {
+  height: 100px;
+  margin-left: -100px;
 }
 
-.instagram{
-    width:100px;
-    height:100px;
-    cursor:pointer;
+.instagram {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 
-.facebook{
-    width:100px;
-     height:100px;
-     cursor:pointer;
-
+.facebook {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 
-.twitter{
-width:100px;
-     height:100px;
-     cursor:pointer;
-
+.twitter {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 
 .gmail {
-width:100px;
-     height:100px;
-     cursor:pointer;
-
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
 }
 
-.footer{
-
+.footer {
 }
 
-footer{
-    text-align:center;
-    background-color:rgb(60,60,100);
+footer {
+  text-align: center;
+  background-color: rgb(60, 60, 100);
 }
 
 p {
-    font:Arial;
+  font: Arial;
 }
-
