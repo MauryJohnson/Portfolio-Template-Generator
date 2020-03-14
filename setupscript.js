@@ -62,9 +62,9 @@ Script();
 
 //var Templates = [];
 
-var Templates3 = document.getElementsByClassName("template")[0].children;
+var Templates2 = document.getElementsByClassName("template")[0].children;
 
-var Templates2 = document.getElementsByClassName("template")[1].children;
+var Templates3 = document.getElementsByClassName("template")[1].children;
 
 var Templatesl = [Templates2,Templates3]
 
@@ -85,6 +85,21 @@ for(var t in Templatesl){
     var Templates = Templatesl[t];
 
     for(var i = 0;i<Templates.length;i+=1){
+
+        if(t==0){
+            //alert("t");
+            if(i==0){
+
+                //alert(t+","+i);
+                //alert(Templates[i].id);
+                Templates[i].addEventListener("mousedown",function(){
+
+                        //alert("Clicked");
+                        window.open("./Templates/template1.html");
+
+                });
+            }
+        }
 
     var height = Templates[i].getBoundingClientRect().height;
     if(height > MaxHeight)
