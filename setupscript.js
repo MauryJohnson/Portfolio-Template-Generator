@@ -92,6 +92,16 @@ var Dictionary =
         "02":function(){
             window.open("./Templates/Template3/template3.html");
         }
+        "10":function(){
+            window.open("'./Templates/Template4/joeblogss.html")
+        }
+        "11":function(){
+            window.open("'./Templates/Template5/doedoe.html")
+        }
+        "12":function(){
+            window.open("'./Templates/Template6/johnsmithblue.html")
+        }
+
     }
 
 for(var t in Templatesl){
