@@ -80,26 +80,27 @@ for(var t in Templates3){
 var MaxHeight = 0;
 var MaxWidth = 0;
 
+var Dictionary =
+    {
+        "00":function(){
+             window.open("./Templates/Template1/template1.html");
+        },
+        "01":function(){
+            window.open("./Templates/Template2/template2.html");
+        }
+        ,
+        "02":function(){
+            window.open("./Templates/Template3/template3.html");
+        }
+    }
+
 for(var t in Templatesl){
 
     var Templates = Templatesl[t];
 
     for(var i = 0;i<Templates.length;i+=1){
 
-        if(t==0){
-            //alert("t");
-            if(i==0){
-
-                //alert(t+","+i);
-                //alert(Templates[i].id);
-                Templates[i].addEventListener("mousedown",function(){
-
-                        //alert("Clicked");
-                        window.open("./Templates/template1.html");
-
-                });
-            }
-        }
+        Templates[i].addEventListener("click",Dictionary[t+""+i]);
 
     var height = Templates[i].getBoundingClientRect().height;
     if(height > MaxHeight)
