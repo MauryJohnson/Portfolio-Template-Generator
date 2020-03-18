@@ -102,7 +102,7 @@ var Dictionary =
         }
         ,
         "12":function(){
-            window.open("./Templates/Template6/files/Themes/blue/johnsmithblue.html")
+            window.open("./Templates/Template6/files/Themes/blue/index.html")
         }
 
     }
