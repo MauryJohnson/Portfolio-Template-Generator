@@ -16,7 +16,7 @@ function FireEvent(Element,Event){
 
 //var a = async function(){
   setTimeout(async function(){
-  alert("Double click to edit")
+  alert("Click to edit")
 },0);
 //}
 //a();
@@ -39,7 +39,7 @@ var MouseOut = function(e,This){
   This.parentNode.removeChild(This);
 
   //setTimeout(function(){
-    Element.addEventListener("dblclick",MouseOver);
+    Element.addEventListener("click",MouseOver);
   //},2000);
 
   CurrentFocus = null;
@@ -73,7 +73,7 @@ var MouseOver = function(){
   I.addEventListener("mouseout",MouseOut);
 
   setTimeout(function(){
-  document.body.addEventListener("dblclick",OuterClick);
+  document.body.addEventListener("click",OuterClick);
 },1500);
   //},2000);
 }
@@ -260,7 +260,7 @@ for(var i in Targets){
     }
 
     if(Elements[e].addEventListener){
-      Elements[e].addEventListener("dblclick",MouseOver);
+      Elements[e].addEventListener("click",MouseOver);
 
    }
   }
