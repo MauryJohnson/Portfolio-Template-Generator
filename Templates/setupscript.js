@@ -1,4 +1,7 @@
 //
+var rightMouseClicked = false;
+
+
 
 console.log("-");
 
@@ -55,7 +58,20 @@ function(){
 };
 
 var MouseOver = function(){
+//alert(this.innerHTML)
+  if(this.innerHTML){
+//alert(this.innerHTML)
+    if(this.innerHTML.indexOf("Print")!=-1
+        || this.disabled==true ||
+          this.getAttribute("alt") == "undefined" ||
+            this.innerHTML.indexOf("img")!=-1)
+    return;
+  }
+  else
+  if( this.disabled==true || this.getAttribute("alt") == "undefined" || this.tagName=="IMG")
+  return;
 
+  //if(rightMouseClicked){
   var I = document.createElement("input");
 
   I.setAttribute("PreviousElement",this.tagName);
@@ -76,6 +92,8 @@ var MouseOver = function(){
   document.body.addEventListener("click",OuterClick);
 },1500);
   //},2000);
+  //rightMouseClicked=false;
+//}
 }
 
 var Disappears = ["ChangeTheme"];
@@ -154,6 +172,21 @@ var Print2 =   async function(){
 });
         })
       }
+      var ClearBI = ["ad","tel","web","mail"];
+
+      setInterval(function(){
+      for(var c in ClearBI){
+        var el = document.getElementsByClassName(ClearBI[c]);
+        for(var i in el){
+          el[i].style="background-image:url('')"
+          var t = document.getElementsByTagName("h1");
+          for(var j in t){
+            if(j==0)
+              t[j].style="min-width:300px"
+          }
+        }
+      }
+    },200);
 
       var ClearClasses = ["name"];
 
@@ -171,12 +204,25 @@ var Print2 =   async function(){
         }
       }
 
+      function disableAll(E){
+        var PN = E.parentNode;
+        while(E!=null){
+          E.disabled=true;
+          if(E.style)
+          E.style.zIndex="-1";
+          E=E.parentNode;
+        }
+      }
+
 for(var i in Targets){
   var Elements = document.getElementsByTagName(Targets[i]);
   //console.log(d);
   var Searches = ["innerHTML","alt"];
 
-  var Removes = ["twitter","facebook","download","contact me","images/icn-print.jpg"];
+
+  var Removes = ["twitter","contact me","images/icn-print.jpg","Download PDF","north","save.jpg"];
+  //var Removes = [];
+
 
   for(var e in Elements){
 
@@ -187,9 +233,12 @@ for(var i in Targets){
       if(Elements[e]){
         for(var r in Removes){
           if(Elements[e].innerHTML)
-          if(Elements[e].innerHTML.toLowerCase().indexOf(Removes[r])!=-1){
+          if(Elements[e].innerHTML.toLowerCase().indexOf(Removes[r].toLowerCase())!=-1){
             var P = Elements[e].parentNode;
-            Elements[e].parentNode.removeChild(Elements[e])
+            Elements[e].parentNode.removeChild(Elements[e]);
+            disableAll(Elements[e])
+            //Elements[e].parentNode.remove();
+
             Deleted = true;
 
             if(Removes[r]=="images/icn-print.jpg"){
@@ -244,6 +293,8 @@ for(var i in Targets){
             Elements[e].style.height="20px";
             //Elements[e].style.marginTop="5px";
 
+            //Elements[e].removeEventListener("click",MouseOver);
+
             Elements[e].addEventListener("click",
             Print2
             );
@@ -261,7 +312,6 @@ for(var i in Targets){
 
     if(Elements[e].addEventListener){
       Elements[e].addEventListener("click",MouseOver);
-
    }
   }
 
