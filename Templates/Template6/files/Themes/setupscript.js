@@ -19,7 +19,11 @@ for(var t in Themes){
 document.getElementById("ChangeTheme")
 .addEventListener("change",function(){
 
+  //var a async function(){
   alert("Change theme to:"+this.value);
+  //}
+
+  //a();
 
   window.open("../"+this.value+"/index.html");
 

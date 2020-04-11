@@ -1,7 +1,8 @@
 //
+
 console.log("-");
 
-var Targets = ["a","p","h1","h2","h3","h4","span","li",""];
+var Targets = ["a","p","h1","h2","h3","h4","span","li","button","img"];
 
 var CurrentFocus;
 
@@ -13,7 +14,12 @@ function FireEvent(Element,Event){
 
 }
 
-alert("Double click to edit")
+//var a = async function(){
+  setTimeout(async function(){
+  alert("Double click to edit")
+},0);
+//}
+//a();
 
 var MouseOut = function(e,This){
 
@@ -28,7 +34,7 @@ var MouseOut = function(e,This){
 
   //if This.innerHTML is null, then This.value
   //otherwise This.innerHTML
-  Element.innerHTML = This.innerHTML || This.value;
+  Element.innerHTML = This.innerHTML || This.value || "NOTHING";
   This.parentNode.insertBefore(Element,This);
   This.parentNode.removeChild(This);
 
@@ -72,23 +78,105 @@ var MouseOver = function(){
   //},2000);
 }
 
-var Print2 =   function(){
+var Disappears = ["ChangeTheme"];
+
+var Print2 =   async function(){
 
   //alert("Print")
 
   //this.removeEventListener("click",Print2);
 
-  return window.print();
+  this.style.display="none";
+  for(var d in Disappears){
+    if(document.getElementById(Disappears[d]))
+      document.getElementById(Disappears[d]).style.display="none";
+  }
+
+  await window.print();
+
+  this.style.display="inline-block";
+  for(var d in Disappears){
+    if(document.getElementById(Disappears[d]))
+      document.getElementById(Disappears[d]).style.display="inline-block";
+  }
+
+  return
 
 
 }
+  var Entries = document.getElementsByClassName("entry")
+    if(Entries.length>0){
+      Entries[Entries.length-1].innerHTML=
+      `
+      <h2>WORKS</h2>
+
+      <table style="border:0px;">
+      <tr style="border:0px">
+
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+      </td>
+
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+
+      </td>
+
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+      </td>
+
+      </tr>
+      <tr style="border:0px">
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+      </td>
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+      </td>
+      <td style="border:0px">
+      <img style="max-width:150px;max-height:150px;width:150px;height:150px;" onmouseenter="this.style.background='white'" src="images/image.jpg" innerHTML="">
+      </td>
+      <tr style="border:0px">
+      </table>
+      `
+      setTimeout(function(){
+          Entries[Entries.length-1].children[1].style.border="0px";
+      },1)
+
+    }
+
+      if(document.getElementById("message")){
+        document.getElementById("message").addEventListener("click",function(){
+          window.scroll({
+  top: 0,
+  behavior: 'smooth'
+});
+        })
+      }
+
+      var ClearClasses = ["name"];
+
+      for(var c in ClearClasses){
+        var CC = document.getElementsByClassName("name");
+        //alert(CC);
+        for(var cc in CC){
+          CC[cc].innerHTML="EDIT HERE";
+
+            setTimeout(function(){
+              if(CC[cc].style)
+                CC[cc].style.maxWidth="400px;!important";
+            },1);
+
+        }
+      }
 
 for(var i in Targets){
   var Elements = document.getElementsByTagName(Targets[i]);
   //console.log(d);
   var Searches = ["innerHTML","alt"];
 
-  var Removes = ["twitter","facebook","download","contact me"];
+  var Removes = ["twitter","facebook","download","contact me","images/icn-print.jpg"];
 
   for(var e in Elements){
 
@@ -100,32 +188,61 @@ for(var i in Targets){
         for(var r in Removes){
           if(Elements[e].innerHTML)
           if(Elements[e].innerHTML.toLowerCase().indexOf(Removes[r])!=-1){
+            var P = Elements[e].parentNode;
             Elements[e].parentNode.removeChild(Elements[e])
             Deleted = true;
+
+            if(Removes[r]=="images/icn-print.jpg"){
+              var B = document.createElement("button");
+              B.value=B.innerHTML = "Print";
+
+                          B.style.width="50px"
+                          B.style.height="20px";
+
+              P.appendChild(B);
+            }
+
           }
         }
       }
       if(Deleted)continue;
 
+
+/*if(Elements[e].innerHTML)
+            if(Elements[e].innerHTML.indexOf("Print")!=-1)
+              alert(Elements[e].innerHTML)
+*/
     if(Elements[e].setAttribute)
  {
-      Elements[e].setAttribute(Searches[s],Elements[e].innerHTML || Elements[e][Searches[s]]);
 
+      Elements[e].setAttribute(Searches[s],Elements[e].innerHTML || Elements[e][Searches[s]]);
 
     if(Elements[e].getAttribute(Searches[s])){
 
       if(
-        Elements[e].getAttribute(Searches[s]).
+        (Elements[e].getAttribute(Searches[s]).
         toLowerCase().
         indexOf("pdf")>=0 &&
         Elements[e].getAttribute(Searches[s]).
         toLowerCase().
-        indexOf("download")>=0
+        indexOf("download")>=0)
+        || Elements[e].getAttribute(Searches[s]).indexOf("Print")!=-1
        ){
 
+         if(Elements[e].tagName=="IMG" || Elements[e].tagName=="BUTTON"){
+         //alert(Elements[e].id);
+         if(Elements[e].tagName=="IMG"){
+          // alert(Elements[e])
+           Elements[e].parentNode.removeChild(Elements[e]);
+           Elements[e] = document.createElement("Button");
+           Elements[e].value = "Print";
+         }
 
          if( ! Elements[e].getAttribute("PrintFunction")){
 
+            Elements[e].style.width="50px"
+            Elements[e].style.height="20px";
+            //Elements[e].style.marginTop="5px";
 
             Elements[e].addEventListener("click",
             Print2
@@ -135,8 +252,8 @@ for(var i in Targets){
 
             Elements[e].parentNode.setAttribute("PrintFunction","true");
 
+          }
         }
-
       }
      }
 }
